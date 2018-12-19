@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Accordion", "type": "class", "comment": "", "src": "../form_builder/accordion/accordion.js", "children": ["WizardFormBuilder.Accordion.static", "WizardFormBuilder.Accordion.prototype"]})

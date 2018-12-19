@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Inspector", "type": "class", "comment": "", "src": "../form_builder/inspector/inspector.js", "children": ["WizardFormBuilder.Inspector.static", "WizardFormBuilder.Inspector.prototype"]})

@@ -1,0 +1,103 @@
+@x: 12px;
+@y: 11px;
+
+.form-draggable {
+
+  &[data-class='WizardFormBuilder.Models.ImageItem'] {
+    background-image: url('/images/wizard_form_builder/icon-image.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-image.png'); }
+    background-position: @x @y;
+  }
+
+  &[data-class='WizardFormBuilder.Models.PdfItem'] {
+    background-image: url('/images/wizard_form_builder/icon-pdf.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-pdf.png'); }
+    background-position: (@x + 6px) (@y - 3px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.DynamicTextItem'] {
+    background-image: url('/images/wizard_form_builder/icon-text.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-text.png'); }
+    background-position: (@x + 6px) (@y - 3px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.HtmlField'] {
+    background-image: url('/images/wizard_form_builder/icon-web.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-web.png'); }
+    background-position: @x (@y - 2px);
+    span { margin-top: 9px; }
+  }
+
+  &[data-class='WizardFormBuilder.Models.DynamicLinkItem'] {
+    background-image: url('/images/wizard_form_builder/icon-link.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-link.png'); }
+    background-position: (@x + 13px) (@y - 1px);
+    span { margin-left: 31px; }
+  }
+
+  &[data-class='WizardFormBuilder.Models.AudioItem'] {
+    background-image: url('/images/wizard_form_builder/icon-audio.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-audio.png'); }
+    background-position: (@x + 1px) (@y - 3px);
+  }
+
+
+  &[data-class='WizardFormBuilder.Models.TextArea'] {
+    background-image: url('/images/wizard_form_builder/icon-text.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-text.png'); }
+    background-position: (@x + 6px) (@y - 3px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.SelectField'] {
+    background-image: url('/images/wizard_form_builder/icon-dropdown.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-dropdown.png'); }
+    background-position: (@x + 6px) (@y - 2px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.CheckBox'] {
+    background-image: url('/images/wizard_form_builder/icon-checkbox.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-checkbox.png'); }
+    background-position: (@x + 6px) (@y - 2px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.RadioButton'] {
+    background-image: url('/images/wizard_form_builder/icon-multiplechoice.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-multiplechoice.png'); }
+    background-position: (@x + 6px) (@y - 3px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.TextField'] {
+    background-image: url('/images/wizard_form_builder/icon-textinput.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-textinput.png'); }
+    background-position: (@x + 4px) @y;
+    span { margin-left: 43px; }
+  }
+
+  &[data-class='WizardFormBuilder.Models.ListField'] {
+    background-image: url('/images/wizard_form_builder/icon-list.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-list.png'); }
+    background-position: (@x + 6px) (@y - 4px);
+    span { margin-top: 15px !important;}
+  }
+
+  &[data-class='WizardFormBuilder.Models.ImageTagging'] {
+    background-image: url('/images/wizard_form_builder/icon-list.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-list.png'); }
+    background-position: (@x + 6px) (@y - 4px);
+  }
+
+  &[data-class='WizardFormBuilder.Models.TitleItem'] {
+    background-image: url('/images/wizard_form_builder/icon-title.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-title.png'); }
+    background-position: (@x + 5px) @y;
+    span { margin-left: 40px;}
+  }
+
+  &[data-class='WizardFormBuilder.Models.StaticTextItem'] {
+    background-image: url('/images/wizard_form_builder/icon-text.png');
+    &:hover { background-image: url('/images/wizard_form_builder/icon-text.png'); }
+    background-position: (@x - 4px) (@y - 3px);
+    span { margin-left: 29px; }
+  }
+
+}

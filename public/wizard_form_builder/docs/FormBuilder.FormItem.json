@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.FormItem", "type": "class", "comment": "", "src": "../form_builder/form_item/form_item.js", "children": ["WizardFormBuilder.FormItem.static", "WizardFormBuilder.FormItem.prototype"]})

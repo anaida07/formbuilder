@@ -1,0 +1,1 @@
+C({"name": "prototype.addItem", "params": {"item": {"description": "", "type": "", "optional": false, "order": 0, "name": "item"}}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["prototype"], "comment": "<p>Add this item to the list of this form's items, and render it </p>", "src": "../form_builder/models/form.js", "children": []})

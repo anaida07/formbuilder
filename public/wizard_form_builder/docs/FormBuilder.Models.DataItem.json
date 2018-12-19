@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Models.DataItem", "inherits": "WizardFormBuilder.Models.FormItem", "type": "class", "comment": "<p>DataItem - Base class for data elements. </p>", "src": "../form_builder/models/data_item.js", "children": ["WizardFormBuilder.Models.DataItem.static", "WizardFormBuilder.Models.DataItem.prototype"]})

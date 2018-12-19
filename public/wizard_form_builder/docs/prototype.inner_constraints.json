@@ -1,0 +1,1 @@
+C({"name": "prototype.inner_constraints", "params": {}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["prototype"], "comment": "<p>Return the lowest and highest x and y coordinates of THE INSIDE OF this element </p>", "src": "../form_builder/models/form.js", "children": []})

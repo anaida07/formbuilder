@@ -1,0 +1,43 @@
+<label class='top'><%= this.model.attr('label') %></label>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+
+      <% var m = this.model, l = this.list; %>
+
+      <% $(this.model.attr('columns')).each( function() { %>
+        <th><%= $.String.capitalize( this.label ) %></th>
+      <% }); %>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% if( this.list ) { %>
+      <% for(var i = 0; i < this.list.length; i++) { %>
+        <tr>
+          <td class='delete'>&#x2716;</td>
+          <% $(this.model.attr('columns')).each( function() { %>
+            <td><%== text_field_tag(m.attr('name') + '[]' + '[' + this.name + ']', l[i][this.name]) %></td>
+          <% }); %>
+        </tr>
+      <% } %>
+    <% } else { %>
+      <% for(var i = 0; i < this.model.attr('start_rows'); i++) { %>
+        <tr>
+          <td class='delete'>&#x2716;</td>
+          <% $(this.model.attr('columns')).each( function() { %>
+            <td>
+              <%== text_field_tag(m.attr('name') + '[]' + '[' + this.name + ']', '') %>
+              <%== hidden_field_tag(m.attr('name') + '[]' + '[x_start]','') %>
+              <%== hidden_field_tag(m.attr('name') + '[]' + '[y_start]','') %>
+              <%== hidden_field_tag(m.attr('name') + '[]' + '[x_end]' ,'') %>
+              <%== hidden_field_tag(m.attr('name') + '[]' + '[y_end]','') %>
+            </td>
+          <% }); %>
+        </tr>
+      <% } %>
+    <% } %>
+  </tbody>
+</table>
+<a class='add-one-more' href='javascript://'>Add another</a>

@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Models.DataItem.prototype", "type": "prototype", "parents": ["WizardFormBuilder.Models.DataItem"], "comment": "", "src": "../form_builder/models/data_item.js", "children": ["WizardFormBuilder.Models.DataItem.prototype.valueHelper"]})

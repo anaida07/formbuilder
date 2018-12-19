@@ -1,0 +1,75 @@
+/*------------------------ for body -------*/
+header.fixed {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  height: 50px;
+  background-color: #0088bb;
+}
+#factory-builder{
+  margin-top: 50px;
+}
+header.fixed .btn-container .btn-warning{
+  position: relative;
+  background-color: initial;
+  border: none;
+  font-size: 23px;
+}
+header.fixed .btn-container .btn-warning:hover {
+  background-color: initial;
+}
+header.fixed .btn-container .btn-success {
+  border-radius: 8px;
+}
+header.fixed .btn-container {
+  float: right;
+  line-height: 50px;
+  margin-right: 20px;
+}
+header.fixed .btn-container a {
+  margin-left: 5px;
+}
+header.fixed .btn-back {
+  margin: 0px;
+  float: left;
+  line-height: 50px;
+}
+header.fixed .fixed_header {
+  height: 45px;
+  width: 249px;
+}
+#tabs {
+  height: 100%;
+}
+#tabs li {
+  height: 100%;
+  padding: 0 29px;
+  line-height: 37px;
+}
+header.fixed .logo {
+  float: left;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  padding: 0 10px;
+  width: 249px;
+  font-weight: 500;
+  height: 50px;
+  display: block;
+}
+.side-column {
+  margin-top: 2px;
+}
+.side-column {
+  position: fixed;
+}
+.horizontal {
+  clear: both;
+  margin-left: 5%;
+}
+.horizontal img {
+  float: left;
+}

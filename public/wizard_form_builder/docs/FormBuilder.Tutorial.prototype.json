@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Tutorial.prototype", "type": "prototype", "parents": ["WizardFormBuilder.Tutorial"], "comment": "", "src": "../form_builder/tutorial/tutorial.js", "children": ["WizardFormBuilder.Tutorial.prototype.bindClickDismisser"]})

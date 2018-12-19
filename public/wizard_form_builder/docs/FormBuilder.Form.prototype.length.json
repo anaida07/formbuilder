@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Form.prototype.length", "type": "attribute", "parents": ["WizardFormBuilder.Form.prototype"], "comment": "<p>Render the items on the form </p>", "src": "../form_builder/form/form.js", "children": []})

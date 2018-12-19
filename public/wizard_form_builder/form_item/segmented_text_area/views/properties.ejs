@@ -1,0 +1,15 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+
+<%== string_property(field, 'width') %>
+<%== string_property(field, 'height') %>
+<%== string_property(field, 'placeholder', 'Hint') %>
+
+<%
+var choices = [{value: null, text: "Select an option..."}];
+field.form.items.match('type', 'AudioItem').each( function() {
+  choices.push({ value: this.name, text: this.name });
+});
+%>
+
+<%== select_property(field, 'audio', 'Audio', "Select the audio widget to pair with:", choices) %>

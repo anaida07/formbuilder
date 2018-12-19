@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  #factory-builder
+  script(src='../steal/steal.js?wizard_form_builder,development')
+    script.
+      var form_options = { form_id: 1 };

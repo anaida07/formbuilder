@@ -1,0 +1,12 @@
+<h3>Errors Found!</h3>
+
+<p>We found some errors that will prevent your task from working!</p>
+
+<p>Please fix the following items:</p>
+
+<ul>
+  <li><%= elements.length == 1 ? elements.length + ' item' : elements.length + ' items' %>
+    (<%= $.map(elements, function(item, index) { return item.Class.displayName } ).join(', ') %>)
+    <%= elements.length == 1 ? 'does' : 'do' %>
+    not have an "API Name" set. This is how we identify the data and results of your task.</li>
+</ul>

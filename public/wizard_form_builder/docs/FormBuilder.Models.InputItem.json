@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Models.InputItem", "inherits": "WizardFormBuilder.Models.FormItem", "type": "class", "comment": "<p>InputItem - Base class for input elements. </p>", "src": "../form_builder/models/input_item.js", "children": ["WizardFormBuilder.Models.InputItem.static", "WizardFormBuilder.Models.InputItem.prototype"]})

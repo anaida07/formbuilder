@@ -1,0 +1,19 @@
+<h2>Create a Test</h2>
+
+<p>Workers will have to pass this test before they can do your jobs.</p>
+
+<p>First, provide data for your test. When you click "Submit" you'll have to perform your test.</p>
+
+<form id='items-sandbox-input' class='sandbox-input'>
+  <% this.options.form.items.match('accepts_data', true).each( function() { %>
+    <label class="top" for="<%= this.attr('name') %>"><%= this.attr('name') %></label>
+    
+    <% var tagname = this.type == 'DynamicTextItem' ? 'textarea' : 'input' %>
+      
+    <<%= tagname %> type="text" name="<%= this.attr('name') %>" placeholder="<%= this.valueHelper() %>"> </<%= tagname %> ><br>
+  <% }) %>
+  
+  <input type='submit' class='action-button' name='Submit'></input>
+</form>
+
+<a href='javascript://' class='back'>&laquo; Back</a>

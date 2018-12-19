@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Tutorial.prototype.bindClickDismisser", "params": {}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["WizardFormBuilder.Tutorial.prototype"], "comment": "<p>Dismiss any guider by clicking outside of it </p>", "src": "../form_builder/tutorial/tutorial.js", "children": []})

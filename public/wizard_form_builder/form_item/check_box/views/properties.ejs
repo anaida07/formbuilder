@@ -1,0 +1,11 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+
+<% var lf = new WizardFormBuilder.Models.ListField( {name: 'choices', label: 'Choices', columns: [{name: 'value', label: 'Value'}, {name: 'label', label: 'Label'}] }) %>
+<div <%= plugin('wizard_form_builder_form_item_list_field', { list_model: lf, model: field }) %>>
+  <div class='content-area'></div>
+</div>
+
+<%== label_tag( "Instruction", {'for': 'tooltip', 'class': 'top'} ) %>
+<textarea name='tooltip' id='markdown'><%= field.attr('tooltip') %></textarea>
+<span class='format_help'>Formatting Help <i class='fa fa-info-circle'></i></span>

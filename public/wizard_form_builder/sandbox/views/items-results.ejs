@@ -1,0 +1,24 @@
+<h2>Live Test Results</h2>
+
+<p>When your batch is complete, you'd be able to download a CSV file that looks something like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <% var key; %>
+      <% for( key in results ) {%> 
+        <th><%= key %></th>
+      <% } %>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <% for( key in results ) {%> 
+        <td><pre><%= typeof results[key] == 'object' ? $.toJSON(results[key], null, 2) : results[key] %></pre></td>
+      <% } %>
+    </tr>
+  </tbody>
+</table>
+
+<a href='javascript://' class='start-over'>Start Over</a>

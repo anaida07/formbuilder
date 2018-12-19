@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.FormItem.ImageTagging", "inherits": "WizardFormBuilder.FormItem", "type": "class", "comment": "<p>WHAT DO I DO?!</p>", "src": "../form_builder/form_item/image_tagging/image_tagging.js", "children": ["WizardFormBuilder.FormItem.ImageTagging.static", "WizardFormBuilder.FormItem.ImageTagging.prototype"]})

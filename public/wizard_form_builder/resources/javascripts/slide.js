@@ -1,0 +1,22 @@
+$(document).ready(function() {
+  
+  // Expand Panel
+  $(".open").click(function(){
+    $("div#panel").slideDown("slow", function() { 
+      $("input:text:visible:first").focus();
+    });
+    return false;
+  }); 
+  
+  // Collapse Panel
+  $(".close").click(function(){
+    $("div#panel").slideUp("slow");
+    return false;
+  });   
+  
+  // Switch buttons from "Log In | Register" to "Close Panel" on click
+  $("#toggle a").click(function () {
+    $("#toggle a").toggle();
+  });   
+    
+});

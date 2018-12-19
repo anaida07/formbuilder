@@ -1,0 +1,472 @@
+@import url('main.css');
+body.no_scroll{
+  overflow: hidden;
+}
+#factory-builder{
+  font-family: 'OpenSans';
+  font-size: 12px;
+  position: relative;
+  background: #fff;
+}
+.side-column{
+  width: 250px;
+  margin-right: 0;
+  min-height: 100vh;
+  background: #fff;
+  overflow: auto;
+  border-right: 1px solid #e2e2e2;
+  z-index: 1;
+}
+#factory-builder #header {
+  margin: 0;
+  position: absolute;
+  right: 80px;
+  top: -40px;
+}
+.fixed_header{
+  position: fixed;
+  z-index: 10;
+}
+.overlay .overlay-inner{
+  background: white;
+}
+.overlay .header{
+  min-height: 44px;
+  background-color: #F1F1F1;
+}
+.btn.btn-success {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.side-column #task-list{
+  position: fixed;
+  width: 245px;
+  margin-top: 55px;
+  height: 83vh;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.job_form_wrap{
+  margin: 0 auto;
+  background: #F1F1F1;
+  overflow: auto;
+  height: 400px;
+  margin-left: 250px;
+  height: 100vh;
+}
+.job_form_wrap .inner{
+  margin: 0 auto;
+  width: 980px;
+  background: #fff;
+  padding: 20px;
+}
+#job-form{
+  width: 938px;
+  border: 0;
+  /*margin-top: 44px;*/
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+#job-form.editable{
+  background: url('../../images/jb_bg.png') repeat;
+}
+#job-form #prodder{
+  margin: 0 auto;
+  top: 90px;
+}
+.tab-content{
+  height: 100%;
+  padding: 0 10px;
+  background: none;
+  /*width: 55px;*/
+}
+
+/* Top Navigation */
+ul.wizard_form_builder_tabs li{
+  width: auto;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  float: none;
+  overflow: hidden;
+  float: left;
+  background: #ccc !important;
+  border-bottom: 4px solid #6d6d67;
+}
+ul.wizard_form_builder_tabs li:not(:last-child){
+  margin-right: 0
+}
+ul.wizard_form_builder_tabs li.active{
+  background: #6d6d67 !important;
+}
+ul.wizard_form_builder_tabs li.active a{
+  color: #fff;
+  text-shadow: none;
+}
+ul.wizard_form_builder_tabs li a {
+  margin-bottom: 0;
+  font-family: 'OpenSans';
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 0;
+  width: 125px;
+  text-align: center;
+}
+
+
+.accordion-item .accordion-content{
+  padding: 0;
+}
+.accordion-item{
+  height: auto;
+  padding: 10px 0;
+  border-bottom: 1px solid #CFCFCF;
+}
+.accordion-item .accordion-header{
+  border-radius: 0;
+  text-shadow: none;
+  font-weight: normal;
+  font-size: 13px;
+  font-family: 'OpenSansSB';
+  background: none !important;
+  color: #6d6d67;
+  padding: 0;
+}
+.form-draggable{
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  padding: 0;
+  background-color: #fff;
+  border: none;
+  margin: 5px 0;
+  float: none;
+  border: 1px solid rgba(0,0,0,.1);
+  z-index: 0;
+}
+.form-draggable span{
+  margin: 0 !important;
+  line-height: 40px;
+  padding-left: 15px;
+  display: block;
+  color: #2E2E2E;
+  width: auto;
+  font-weight: normal;
+  font-family: 'OpenSansSB';
+  font-size: 12px;
+  float: left;
+}
+.form-draggable:hover{
+  background-color: #e2e2e2 !important;
+  border: 1px solid rgba(0,0,0,.1) !important;
+  box-shadow: none;
+}
+.form-draggable[data-class='WizardFormBuilder.Models.ListField'],
+.form-draggable[data-class='WizardFormBuilder.Models.RadioButton'],
+.form-draggable[data-class='WizardFormBuilder.Models.CheckBox'],
+.form-draggable[data-class='WizardFormBuilder.Models.SelectField'],
+.form-draggable[data-class='WizardFormBuilder.Models.TextArea'],
+.form-draggable[data-class='WizardFormBuilder.Models.TextField'],
+.form-draggable[data-class='WizardFormBuilder.Models.AudioItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.HtmlField'],
+.form-draggable[data-class='WizardFormBuilder.Models.DynamicLinkItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.PdfItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.DynamicTextItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.ImageItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.StaticTextItem'],
+.form-draggable[data-class='WizardFormBuilder.Models.TitleItem']{
+  background-position: right 20px center ;
+}
+.form-draggable[data-class='WizardFormBuilder.Models.ListField'] span{ margin-top: 0 !important}
+
+.content-area .img-tool {
+  background: url('/images/wizard_form_builder/img_toolbar.png') no-repeat center center;
+  display: block;
+  position: absolute;
+  height: 26px;
+  width: 99%;
+  bottom: -27px;
+}
+
+.help_icon {
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: -5px;
+  width: 16px;
+  height: 16px;
+  float: right;
+  display: inline-block;
+  background-image: url('http://cfexternals.s3.amazonaws.com/images/help.png');
+  background-repeat: no-repeat;
+}
+
+span.required{
+  color: red;
+}
+
+ul#tabs{
+  margin: 0;
+}
+.clear{
+  clear: both
+}
+.action-buttons span{ margin-right: 20px; }
+form#property_sheet label{
+  color: #6d6d67;
+  font-size: 13px;
+  cursor: default;
+  display: block;
+  text-align: left;
+  margin-left: 0;
+  margin-top: 0;
+  margin: 0;
+  font-family: 'OpenSansSB';
+}
+#inspector{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 82vh;
+}
+#inspector #property_sheet label:not(.top){
+  margin-left: 0;
+}
+
+form#property_sheet select{
+  width: 230px;
+}
+form#property_sheet .elem .s_block{
+  display: inline-block;
+  margin-top: 10px;
+}
+form#property_sheet .elem .s_block input{
+  width: 40px;
+}
+form#property_sheet .elem .s_block select{
+  width: 115px;
+}
+form#property_sheet .elem#range_wrap{
+  background: #eee;
+  margin: 0 -10px 10px -10px;
+  padding: 5px 0 15px 10px;
+}
+form#property_sheet div.elem input.pdf_width{
+  width: 230px;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #6d6d77;
+  padding: 6px;
+}
+
+.action-buttons span.error{
+  color: #c64040;
+  background: none;
+}
+.action-buttons span:hover{
+  color: #6d6d67;
+}
+#inspector #property_sheet{
+  margin-right: 18px;
+  margin: 0;
+  padding: 0;
+}
+#inspector #property_sheet > input[type=text], #inspector #property_sheet > textarea, #custom_validation_wrap input[type=text]{
+  width: 217px;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #6d6d77;
+  padding: 6px;
+}
+.action-buttons{
+  position: fixed;
+  float: none;
+  margin: 0;
+  right: 90px;
+  z-index: 1;
+}
+.action-buttons a{
+  padding: 5px 10px;
+}
+.action-buttons span{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  padding: 7px 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-family: 'OpenSans';
+  border-radius: 0;
+  background: none;
+  color: #6d6d67;
+  cursor: default;
+}
+.action-buttons span.active, .action-buttons span:hover{
+  background: none;
+  color: #6d6d67;
+}
+#inspector .remove{
+  border-radius: 0;
+  padding: 8px 20px;
+}
+.list_field .content-area table tr td{ padding: 2px; }
+.list_field .content-area table thead tr th{ text-align: center; }
+.content-area table tr td:first-child{ cursor: pointer;}
+.list_field .content-area input{
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #6d6d77;
+  padding: 6px;
+  width: 104px;
+}
+.content-area input[type='text'] {
+  height: 30px;
+}
+
+#job-form label{
+  font-weight: normal;
+  font-family: 'OpenSansSB';
+  font-size: 14px;
+}
+#job-form label.option_label{
+  font-family: 'OpenSans';
+}
+#factory-builder .top{
+  margin: 0;
+}
+form#property_sheet .elem{
+  margin-bottom: 1em;
+}
+form#property_sheet span{
+  display: inline-block;
+  margin-right: 10px;
+}
+form#property_sheet span label{
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+/**** Instructions Format ****/
+.static_text_item p{
+  margin-bottom: 10px;
+}
+.static_text_item ol, .static_text_item ul{
+  margin: 0 0 0 20px !important;
+  width: initial !important;
+}
+.static_text_item ul li{
+  padding: 0;
+  border: none !important;
+  list-style: initial;
+  line-height: 22px;
+}
+.static_text_item ol li{
+  list-style-type: decimal;
+  margin: 0;
+  line-height: 22px;
+}
+.static_text_item ol li > ul li, .static_text_item ul li > ul li{
+  list-style: disc;
+}
+.static_text_item h1{
+  font-size: 22px;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+  color: #393939;
+}
+.static_text_item h2{
+  font-size: 18px;
+  line-height: 1.2em;
+  margin: 0 0 9px;
+  padding:0;
+  color: #393939;
+  border: none;
+}
+#inspector #property_sheet > textarea{
+  resize: vertical;
+  max-height: 480px;
+}
+#job-form .form-item.title_item h1{
+  font-size: 30px;
+  color: #000;
+  font-weight: 500;
+  font-family: 'OpenSans';
+}
+#job-form .form-item.radio_button input{
+  margin-left: 0;
+}
+form#property_sheet span.error{
+  color: #cc0000;
+  font-size: 10px;
+  margin: 0 0 10px 0;
+}
+
+form#property_sheet a.add-one-more{
+  margin-bottom: 1em;
+  display: inline-block;
+}
+#custom_validation_wrap span{
+  margin: 5px 0;
+}
+#job-form .form-item.text_field .value{
+  height: 30px;
+}
+#job-form .form-item.select_field select{
+  height: 30px;
+  font-size: 14px;
+}
+#job-form .s-resize {
+  left: 469px;
+  bottom: 20px;
+}
+#name {
+  text-transform: lowercase;
+}
+#job-form .form-item .edit-text {
+  z-index: 98;
+}
+
+/**** Formatting Help Block Styles ****/
+.formatting_help, .select_formatting_help{
+  position: fixed;
+  top: 50px;
+  left: 250px;
+  width: 300px;
+  background: #FFFFF1;
+  height: 95vh;
+  overflow: auto;
+  padding: 20px;
+  box-shadow: inset 4px 0 6px #CFCFCF;
+}
+.formatting_help p.quiet, .select_formatting_help p.quiet{
+  font-family: 'OpenSansSB';
+  color: #08b;
+}
+.formatting_help code, .select_formatting_help code{
+  padding: 0;
+  color: #6d6d67;
+  background: none;
+  white-space: normal;
+}
+.formatting_help hr, .select_formatting_help hr{
+  margin: 10px 0;
+  border-top: 1px solid #D0D0D0;
+}
+.formatting_help .close_btn, .select_formatting_help .close_btn{
+  cursor: pointer;
+}
+.formatting_help h4, .select_formatting_help h4{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+#inspector #property_sheet .format_help, #inspector #property_sheet .select_format_help{
+  display: block;
+  text-align: right;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #08b;
+}
+#inspector #property_sheet .format_help:hover, #inspector #property_sheet .select_format_help:hover{
+  text-decoration: underline;
+}
+.finalize_btn{
+  border-radius: 0 !important;
+  border: none;
+}

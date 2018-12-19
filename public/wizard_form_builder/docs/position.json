@@ -1,0 +1,1 @@
+C({"name": "position", "type": "attribute", "comment": "<p>Rules for IE7 (full-screen) - Otherwise the relative container causes other page items that are not position:static (default) to appear over the video/gui. </p>", "src": "../form_builder/resources/jplayer-2.1.0/jplayer.blue.monday.css", "children": []})

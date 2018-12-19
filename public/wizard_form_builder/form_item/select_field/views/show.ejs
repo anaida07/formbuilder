@@ -1,0 +1,15 @@
+<label class='top'><%= this.model.attr('label') %></label>
+
+<% options_list = this.model.options.split('\n') %>
+<select id='<%= this.model.attr('name') %>' name='<%= this.model.attr('name') %>'>
+<% for( var i = 0; i < options_list.length; i++ ) { %>
+  <option value='<%= options_list[i] %>'>
+  	<% var start_pos = 0;
+  		var match_found = options_list[i].match(/^\(([*-])\)(\((?:(?!\1)[*-])\))?/);
+  		if (match_found != undefined)
+  			start_pos = match_found[0].length;
+  	 %>
+  	<%= options_list[i].substring(start_pos) %>
+  </option>
+<% } %>
+</select>

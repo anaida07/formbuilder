@@ -1,0 +1,16 @@
+<label class='top'><%= this.model.attr('label') %></label>
+
+<% for( var i = 0; i < this.model.choices.length; i++ ) { %>
+  <input type='radio' 
+         id='<%= this.model.attr('name') + '_' + i %>'
+         name='<%= this.model.attr('name') || this.model.attr('id') %>'
+         value='<%= this.model.choices[i].value %>'>
+  
+  </input>
+  
+  <label class='option_label' for='<%= this.model.attr('name') + '_' + i %>'>
+    <%= this.model.choices[i].label %>
+  </label>
+  
+  <br/>
+<% } %>

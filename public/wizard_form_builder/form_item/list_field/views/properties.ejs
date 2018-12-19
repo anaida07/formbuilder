@@ -1,0 +1,19 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+
+<% var lf = new WizardFormBuilder.Models.ListField( {name: 'columns', label: 'Columns', columns: [{name: 'name', label: 'Name'}, {name: 'label', label: 'Label'}] }) %>
+<div <%= plugin('wizard_form_builder_form_item_list_field', { list_model: lf, model: field }) %>>
+  <div class='content-area'></div>
+</div>
+
+<div class='elem'>
+  <label class='top'>Required</label>
+  <span>
+    <input type='checkbox' name='required' id='list_field_required' <%= field.required === true ? 'checked' : '' %> />
+    <label for='list_field_required'>Yes</label>
+  </span>
+</div>
+
+<%== label_tag( "Instruction", {'for': 'tooltip', 'class': 'top'} ) %>
+<textarea name='tooltip' id='markdown'><%= field.attr('tooltip') %></textarea>
+<span class='format_help'>Formatting Help <i class='fa fa-info-circle'></i></span>

@@ -1,0 +1,18 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+
+<%== label_tag( "Options", {'for': 'options', 'class': 'top'} ) %>
+<textarea name='options'><%= field.options %></textarea>
+<span class='select_format_help'>Formatting Help <i class='fa fa-info-circle'></i></span>
+
+<div class='elem'>
+  <label class='top'>Required</label>
+  <span>
+    <input type='checkbox' name='required' id='select_field_required' <%= field.required === true ? 'checked' : '' %> />
+    <label for='select_field_required'>Yes</label>
+  </span>
+</div>
+
+<%== label_tag( "Instruction", {'for': 'tooltip', 'class': 'top'} ) %>
+<textarea name='tooltip' id='markdown'><%= field.attr('tooltip') %></textarea>
+<span class='format_help'>Formatting Help <i class='fa fa-info-circle'></i></span>

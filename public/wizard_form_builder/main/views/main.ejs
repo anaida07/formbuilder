@@ -1,0 +1,75 @@
+<div id='header'>
+  <div class='action-buttons'>
+    <span id='save-form' href='#'>saved</span>
+  </div>
+</div>
+
+  <div class='side-column'>
+    <div class='fixed_header'>
+      <ul id='tabs'>
+        <li id='library-tab' class='edit-tab'>   <a href='#library'>Add Field</a></li>
+        <li id='inspector-tab' class='edit-tab'> <a href='#inspector'>Edit Field</a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div id='task-list'>
+
+      <div class='noshow tab-content' id='library'>
+
+        <div class='accordion-item' id='step-title'>
+          <div class='accordion-header red'>Title &amp; Instructions</div>
+          <div class='accordion-content clearfix'>
+            <div id='cl-title' />
+          </div>
+        </div>
+
+        <div class='accordion-item' id='step-data-types'>
+          <div class='accordion-header red'>What you provide.</div>
+          <div class='accordion-content clearfix'>
+            <div id='cl-data-source' />
+          </div>
+        </div>
+
+        <div class='accordion-item' id='step-worker-tasks'>
+          <div class='accordion-header red'>What workers give you.</div>
+          <div class='accordion-content clearfix'>
+            <div id='cl-task' />
+          </div>
+        </div>
+      </div>
+
+      <div id='inspector' class='tab-content noshow'>
+        <form id='property_sheet'>
+          No field selected.
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+<div class="holder">
+  <div class='main_wrap'>
+    <div class='job_form_wrap'>
+      <div class='inner'>
+        <div id='job-form' tabindex='-1'>
+          <div id='prodder'>
+            <div id='lt' class='corner'></div>
+            <div id='rt' class='corner'></div>
+            <div id='lb' class='corner'></div>
+            <div id='rb' class='corner'></div>
+
+            <img src='/images/wizard_form_builder/emptyfactory.png'></img>
+            <hr>
+            <div id='explain'> Drag fields here to create a template. </div>
+          </div>
+          <div class='s-resize'></div>
+        </div>
+      </div>
+      <div class='clear'></div>
+    </div>
+  </div>
+</div>
+
+  <div id='tutorial-guiders' class='noshow'>
+  </div>
+  <div class="clear"></div>

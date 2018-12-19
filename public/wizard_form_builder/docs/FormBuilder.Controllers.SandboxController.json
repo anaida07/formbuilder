@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Controllers.SandboxController", "type": "class", "comment": "", "src": "../form_builder/sandbox/sandbox.js", "children": ["WizardFormBuilder.Controllers.SandboxController.static", "WizardFormBuilder.Controllers.SandboxController.prototype"]})

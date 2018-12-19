@@ -1,0 +1,828 @@
+@turquoise: #386A77;
+@orange: #F69537;
+@red: #C64040;
+@white-text: #F6F6F6;
+
+@gray-tabs: #CCC;
+@gray-bg: #F1F1F1;
+@gray-button: #CCC;
+@gray-dotted-border: #BBB;
+
+@review-color: lighten(@red, 25%);
+
+@form-width: 800px;
+@form-border-width: 10px;
+@side-column-width: 380px;
+@side-column-margin: 10px;
+
+.hnbc {
+  font-family: "HelveticaNeue-BoldCondensed", "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosCnBold', "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;
+}
+
+.gradient(@color1, @color2, @color3) {
+  background: @color2; /* for non-css3 browsers */
+  filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='#{@color1}', endColorstr='#{@color2}')"; /* for IE */
+  background: -webkit-linear-gradient(left, @color1, @color2, @color3); /* for webkit browsers */
+  background: -moz-linear-gradient(left,  @color1, @color2, @color3); /* for firefox 3.6+ */
+}
+
+.rounded-corners(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box-shadow(@hoff, @voff, @rad, @color) {
+  -moz-box-shadow: @hoff @voff @rad @color;
+  -webkit-box-shadow: @hoff @voff @rad @color;
+  box-shadow: @hoff @voff @rad @color;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  overflow-y: scroll;
+}
+
+// The rest of the site has default font size 14px
+#factory-builder, #job-form {
+  font-size: 12px;
+}
+
+/* GUIDER ADDITIONS */
+h1.guider_title { margin-top: .5em; }
+a.guider_button:hover { color: white; }
+
+#main-container.wide {
+  width: @form-width + 2 * @form-border-width + @side-column-width + @side-column-margin;
+}
+
+// Make draggable items draggable ... wtf, webkit?
+[draggable=true] { -khtml-user-drag: element; }
+
+#template-name {
+  input { font-size: 14px; padding: 2px; width: 230px; margin-bottom: 3px; }
+}
+
+/* Top action items */
+.action-buttons {
+  float: right;
+  margin-top: 3px;
+  margin-left: 5px;
+  a {
+    display: inline-block;
+    background: @gray-button;
+    padding: 1px 10px;
+    .rounded-corners(2px);
+
+    color: @white-text;
+    letter-spacing: 1px;
+    text-decoration: none;
+    .hnbc;
+
+    &:hover { color: white; }
+    &.active { background-color: @turquoise; }
+    &.error { background-color: @red; border: none; margin: 0;}
+
+    &#preview-enable { background-color: @turquoise; } /* This button is always turquoise */
+  }
+}
+
+/* Left-side column, includes inspector and library */
+.side-column {
+  float: left;
+  width: @side-column-width;
+  height: 620px;
+  margin-right: @side-column-margin;
+
+  // necessary to make inspector hiding possible
+  overflow: hidden;
+  position: relative;
+
+  #task-list {
+    height: 600px;
+    margin-bottom: 10px;
+  }
+
+  #header {
+    margin: 10px;
+  }
+
+  h2 {
+    .hnbc;
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+}
+/**************************
+  OLD COMPONENT TABS
+  **********************/
+ul.wizard_form_builder_tabs {
+  padding: 0 0 0 10px;
+  margin-bottom: 0;
+  list-style-type: none;
+  overflow: auto;
+  font-size: 14px;
+
+  li {
+    .hnbc;
+    float: left;
+
+    background: @gray-tabs;
+    border-style: solid;
+    border-color: @gray-tabs;
+    border-width: 1px 1px 0 1px;
+
+    a {
+      color: #333;
+    }
+
+    padding: 2px 9px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    cursor: pointer;
+
+    &:not(:last-child) { margin-right: 5px; }
+
+    // Right-facing disclosure triangle
+    // &:not(.active):before { content: '\0025B6'; margin-right: 4px; color: @white-text; font-size: .8em; }
+
+    &.active {
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+      background: @gray-bg;
+      a { text-decoration: none; }
+
+      //&:before { content: '\0025BC'; margin-right: 4px; color: @white-text; font-size: .8em; }
+    }
+  }
+}
+
+.tab-content {
+  height: 517px;
+  padding: 15px 10px;
+  background: @gray-bg;
+}
+
+/**************************
+  ACCORDION TASK BUILDER
+  ************************/
+  .accordion-item {
+  clear: both;
+  padding: 3px 0;
+  height: 180px;
+
+  .accordion-header {
+
+    .rounded-corners;
+    color: @white-text;
+    background-color: @gray-tabs;
+
+    text-shadow: 1px 1px 1px #333;
+    font-weight: bold;
+
+    &.turquoise { background-color: @turquoise; }
+    &.red { background-color: @red; }
+    &.orange { background-color: @orange; }
+
+    padding: 1px 12px;
+    font-size: 14px;
+  }
+
+  .accordion-content {
+    padding: 10px 0 5px 0;
+    overflow: visible;
+  }
+}
+
+/***************************
+  COMPONENT LIBRARY
+  DRAGGABLE BUTTONS
+****************************/
+.form-draggable {
+  display: block;
+  float: left;
+  width: 92px;
+  height: 38px;
+  margin: 0 7px 7px 0;
+
+  cursor: move;
+
+  .rounded-corners;
+
+  .box-shadow(1px, 1px, 3px, #c9c9c9);
+  &.tooltip { opacity: 1 !important; position: relative; }
+  background-color: @gray-button;
+  background-repeat: no-repeat;
+
+  border: 1px solid #b2b2b2;
+
+  &:hover { .box-shadow(1px, 1px, 3px, #aaa); }
+  &:active { .box-shadow(0px, 0px, 0px, #000); }
+
+  text-align: center;
+
+  font-size: 11px;
+
+  &:nth-child(3n+3) { margin-right: 0px; }
+
+  span {
+    display: block;
+    margin: 14px 0 0 40px;
+    width: 40px;
+    line-height: 11px;
+  }
+  // For background image CSS, look in component_library.less
+
+}
+
+#cl-data-source .form-draggable {
+  &:hover { border-color: darken(@turquoise, 8%); background-color: @turquoise; color: white;}
+}
+#cl-task .form-draggable {
+  &:hover { border-color: darken(@orange, 8%); background-color: @orange;    color: white;}
+}
+
+#cl-instructions, #cl-title {
+  .form-draggable {
+    &:hover { border-color: darken(@red, 8%); background-color: @red;       color: white;}
+  }
+}
+
+/* This is hacky. All input elements have names that span two lines.
+    Account for that  */
+#cl-task span {
+  margin-top: 8px;
+}
+
+
+/***************************
+    FORM AND ELEMENTS
+****************************/
+
+/* The hider is the div that is positioned over the input elements
+   to obscure them so that they can't take mouse input.
+   We only want to display it inside of editable forms. */
+.hider {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#job-form {
+  margin-bottom: 20px;
+  position: relative; /* IMPORTANT: So coords are relative to this box only! */
+  float: left;
+  border: @form-border-width solid @gray-bg;
+  background: white;
+  outline: 0;
+  width: @form-width;
+  height: 600px;
+  min-height: 400px;
+  color: #444;
+
+  label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 0;
+    color: #444;
+    display: inline;
+
+    &.top { padding-bottom: 3px; display: block; }
+  }
+
+  input, textarea {
+    .box-shadow(0, 0, 0, #000)
+  }
+
+  .explainer {
+    @padding: 120px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #DDD;
+    opacity: 0.89;
+    z-index: 10;
+
+    font-size: 18px;
+    height: 500px;
+    width: @form-width - 2 * @padding;
+    text-align: center;
+    padding: 100px @padding 0;
+  }
+
+  #prodder {
+    position: relative;
+    display: none;
+    width: 376px;
+    height: 210px;
+    background: #F6F6F6;
+    margin: 91px auto 0;
+    padding: 20px;
+    text-align: center;
+
+    @away: 5px;
+    .corner { border-style: dotted; border-color: @gray-dotted-border; width: 10px; height: 10px; position: absolute; }
+    #rt { right: @away; top: @away; border-width: 2px 2px 0 0; }
+    #lt { left: @away; top: @away; border-width: 2px 0 0 2px; }
+    #lb { left: @away; bottom: @away; border-width: 0 0 2px 2px; }
+    #rb { right: @away; bottom: @away; border-width: 0 2px 2px 0; }
+
+    hr {
+      border-top: 2px dotted @gray-dotted-border;
+      border-bottom: 0;
+      color: #F6F6F6;
+      background-color: #F6F6F6;
+      width: 288px;
+      margin: 0 auto;
+    }
+
+    #explain {
+      .hnbc;
+      padding-top: 10px;
+      font-size: 36px;
+      line-height: 1.2em;
+
+    }
+  }
+  &.editable.empty #prodder { display: block; }
+
+  .s-resize {
+    @width: 20px;
+    @height: 10px;
+
+    display: none;
+
+    position: absolute;
+    bottom: 0-@height;
+    left: @form-width / 2 - @width / 2;
+    background: url('/images/wizard_form_builder/s-resize.png') center center no-repeat;
+    height: @height;
+    width: @width;
+    &:hover { cursor: ns-resize; }
+  }
+
+  #drag-selection {
+    position: absolute;
+    z-index: 2000;
+    background: #aaa;
+    opacity: .2;
+  }
+
+  .form-item {
+    position: absolute; /* Enable us to position things by drag & drop */
+    padding: 11px;      /* Make up for the lost border */
+    //padding: 10px;
+
+    .spinner {
+      display: none;
+      background-color: #eee;
+      background-image: url('/images/wizard_form_builder/spinner.gif');
+      background-position: center center;
+      background-repeat: no-repeat;
+      opacity: .5;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &.disabled {
+      .spinner { display: block; }
+    }
+
+    /* RESIZING COMPONENTS */
+    .resize {
+      @dim: 5px;
+      @border: 1px;
+      @pos: (2 * @border + @dim) / -2 - 1;
+
+      height: @dim;
+      width: @dim;
+      background-color: white;
+      border: @border solid #333;
+      display: none;
+      position: absolute;
+
+      &.e { right: @pos; cursor: ew-resize; }
+      &.w { left: @pos; cursor: ew-resize; }
+
+      &.nw { top: @pos; left: @pos; cursor: nw-resize; }
+      &.ne { top: @pos; right: @pos; cursor: ne-resize; }
+      &.se { bottom: @pos; right: @pos; cursor: se-resize; }
+      &.sw { bottom: @pos; left: @pos; cursor: sw-resize; }
+    }
+
+    .edit-text {
+      height: 16px;
+      width: 16px;
+      position: absolute;
+      background: url('/images/wizard_form_builder/edit-text-icon.png');
+      top: 2px;
+      left: 2px;
+      z-index: 100;
+      cursor: pointer;
+      display: none;
+    }
+
+    &.editing input { border: 1px solid #ccc; color: #333; width: 100%; }
+
+    /* Text Input */
+    &.text_field {
+
+
+      // Double-duty as a literal text field and a regular div (for review)
+      .value {
+        font-size: 12px;
+        margin: 0;
+        .rounded-corners(2px);
+        border: 1px solid #8F8F8F;
+        padding: 2px;
+        height: 16px;
+
+        color: black;
+        background-color: white;
+        line-height: normal;
+        font-family: "Lucida Grande", "Helvetica", sans;
+      }
+
+      // Hide the overflow until hover in review jobs
+      &.review .value { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      &.review:hover .value { overflow: visible; height: inherit; white-space: normal; }
+
+      // Frozen field
+      .value:disabled { background: #eee; color: #111; }
+
+      input:-moz-placeholder {
+        color: #aaa;
+      }
+
+    }
+
+    &.segmented_text_area {
+      .highlighted { background-color: #A4D6F5; }
+    }
+
+    /* Text Area */
+    &.text_area, &.segmented_text_area {
+      // Double-duty as a literal textarea and a regular div (for review)
+      .value {
+        font-size: 12px;
+        .rounded-corners(2px);
+        margin: 0;
+        border: 1px solid #8F8F8F;
+        padding: 2px;
+        min-height: 16px;
+
+        color: black;
+        background-color: white;
+        line-height: normal;
+        font-family: "Lucida Grande", "Helvetica", sans;
+
+        b {
+          font-weight: normal;
+          background-color: lighten(@red, 30%);
+        }
+      }
+
+      textarea:-moz-placeholder {
+        color: #aaa;
+      }
+
+      .highlight-instructions {
+        color: @red;
+      }
+
+      pre.value {
+        white-space: pre-wrap;  // preserves white-space, but also line-wraps
+        word-break: normal;     // counteract word-break: break-all in admin
+        overflow: auto; // scroll
+      }
+
+      div.value.contentEditable  {
+        white-space: pre-wrap;
+        overflow: auto; // contentEditable - scroll when exceed bounds
+      }
+
+      // Hide the overflow until hover in review jobs
+      &.review .value { overflow: hidden; }
+
+      // Frozen field
+      .value:disabled { background: #eee; color: #111; }
+    }
+
+    /* List */
+    &.list_field, &.image_tagging {
+      input { width: 150px; }
+    }
+
+    /* Multiple Choice */
+    &.radio_button {
+      input { margin-left: 10px; }
+      label:not(.top) { font-weight: normal; margin-left: 3px; }
+    }
+
+    /* Image */
+    &.image_item {
+      .gallery, img.main {
+        float: left;
+      }
+
+      .gallery {
+        @border-width: 4px;
+
+        margin-left: 10px;
+        overflow: auto;
+
+        img {
+          display: block;
+          margin-bottom: 10px;
+          cursor:pointer;
+
+          &:not(.selected) {
+            margin-left: @border-width;
+            margin-top: @border-width;
+          }
+
+          &.selected {
+            border: @border-width solid @orange;
+          }
+        }
+      }
+    }
+
+    /* Instructions */
+    &.static_text_item {
+      font-size: 14px;
+      textarea { font-size: 14px; margin: 0; }
+    }
+
+    &.dynamic_text_item {
+      div.text {
+        padding: 5px;
+        overflow: auto;
+        word-wrap: break-word;
+        border: 1px solid #ccc;
+      }
+    }
+
+    &.html_field {
+      iframe { border: 1px solid #ccc; }
+    }
+
+    &.title_item {
+      h1 { margin-bottom: 0; }
+      input { font-size: 3em; .hnbc; font-weight: bold; }
+    }
+
+    /* Review widgets (only worker tasks) */
+    &.review {
+      cursor: pointer;
+
+      border: 1px solid #ddd;
+
+      // So shit don't overlapz
+      &:hover {
+        z-index: 1;
+        background-color: #FFFEE0;
+      }
+
+      &:active:not(.subFlag) {
+        .box-shadow(0px, 0px, 0px, #000);
+        margin: 1px 0 0 1px;
+      }
+
+      //background-color: lighten(@turquoise, 55%);
+      background-color: white;
+      .box-shadow(2px, 2px, 8px, #888);
+
+      /* Show the hider on review widgets */
+      .hider { display: block; }
+
+      /* Don't show the hider on subflaggable widgets */
+      &.subFlag {
+        background-color: lighten(@orange, 35%);
+        .hider { display: none; }
+        .extra-instructions { color: darken(@orange, 10%); }
+      }
+
+      // "on" states
+      &.flagged {
+        background-color: @review-color;
+        color: #111;
+        border: none;
+      }
+
+      .word-flaggable {
+        cursor: pointer;
+
+        &.flagged {
+          color: red;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.qual-fail {
+      background-color: @review-color;
+      color: #111;
+    }
+  }
+
+  /* Only show background placeholder in editable mode */
+  &.editable .image_item img, &.preview .image_item img{
+    background: #eee url('/images/wizard_form_builder/image-placeholder.png') no-repeat center center;
+  }
+
+  &.editable .pdf_item img, &.preview .pdf_item img {
+    background: #eee url('/images/wizard_form_builder/pdf-placeholder.png') no-repeat center center;
+  }
+
+  /* Styles when the form is editable by the developer */
+  &.editable {
+    background: url('/images/wizard_form_builder/diagbg.png');
+
+    .s-resize { display: block; }
+    .hider { display: block; }
+    .form-item {
+      outline: none;
+      padding: 10px;
+
+      /* Show borders of components, highlight when active */
+      &.text_field, &.text_area, &.radio_button, &.check_box, &.select_field, &.list_field, &.image_tagging, &.segmented_text_area {
+        border: 1px solid lighten(@orange, 22%);
+        &.active { background-color: lighten(@orange, 28%); }
+        &.active textarea, &.active input[type=text] { background-color: lighten(@orange, 38%); }
+      }
+
+      /* Show borders of components, highlight when active */
+      &.image_item, &.dynamic_text_item, &.dynamic_link_item, &.html_field, &.audio_item, &.pdf_item {
+        border: 1px solid lighten(@turquoise, 25%);
+        &.active .hider { background-color: @turquoise; }
+      }
+
+      /* Show borders of components, highlight when active */
+      &.title_item, &.static_text_item {
+        border: 1px solid lighten(@red, 28%);
+        &.active .hider { background-color: @red; }
+      }
+
+      &.active {
+        .resize, .edit-text { display: block; }
+        &:hover { cursor: move; }
+        .hider { opacity: .3; }
+
+        &.editing .edit-text { display: none; }
+      }
+    }
+  }
+}
+
+.review-instructions {
+  padding: 10px;
+  border: 1px solid #40403C;
+  //.box-shadow(-2px, 0, 8px, #888);
+  background: #FAFAF8;
+  margin-bottom: 20px;
+}
+
+/************************
+  INSPECTOR
+***********************/
+#inspector {
+  overflow: auto;
+  #fieldtype {
+    clear: both;
+    float: right;
+    padding-top: 8px;
+    font-weight: bold;
+  }
+
+  #property_sheet {
+    margin-right: 10px;
+
+    label:not(.top) {
+      font-weight: normal;
+      margin-left: 3px;
+    }
+
+    > input {
+      display: block;
+
+      &[type=text] {
+        font-size: 12px;
+        width: 276px;
+        margin: 0 0 1em 0;
+      }
+
+      &[type=checkbox], &[type=radio] {
+        display: inline;
+
+        &.final { margin-bottom: 1em; }
+      }
+    }
+
+    > textarea {
+      width: 276px;
+      font-size: 12px;
+      margin: 0 0 1em 0;
+      height: 150px;
+    }
+
+    p.small {
+      font-style: italic;
+      font-size: .9em;
+      margin-bottom: 4px;
+      line-height: 12px;
+    }
+  }
+
+  .button {
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans;
+    font-weight: normal;
+    letter-spacing: 0;
+    background: @gray-button;
+    border: none;
+    .rounded-corners;
+    padding: 6px;
+    cursor: pointer;
+    color: black;
+
+    &.close {
+      padding: 1px 6px;
+      background: @orange;
+      vertical-align: 2px;
+      margin-left: 2px;
+      color: white;
+      border: 1px solid darken(@orange, 10%);
+
+      &:hover { background: lighten(@orange, 8%); }
+      &:active { background: darken(@orange, 15%); }
+    }
+  }
+
+  .remove {
+    float: right;
+    &:hover { color: @red; }
+    &:active { background: @red; color: @white-text; }
+  }
+}
+
+/* Array of options */
+.form_builder_form_item_list_field, .form_builder_form_item_image_tagging {
+  margin-bottom: 1em;
+
+  table {
+    width: 91%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-bottom: 5px;
+
+    thead th { background: none; }
+
+    tr {
+      th { text-align: left; font-size: 11px; padding: 0; }
+      td {
+        &.delete {
+          background:none;
+          cursor: pointer;
+          border: none;
+          padding-right: 3px;
+          font-size: 14px;
+
+          &:hover { color: @red; }
+        }
+        padding: 0;
+        border: 1px solid @gray-dotted-border;
+        input { display: block; font-size: 12px; outline: 0; border: none; margin: 0; padding: 3px 0px; width: 100%; }
+      }
+    }
+  }
+
+  .add-one-more {
+    margin-left: 18px;
+  }
+}
+
+/* Sandbox */
+#sandbox {
+  p, ul, a { font-size: 14px; }
+
+  form.sandbox-input {
+    width: 402px;
+
+    input[type='text'] { width: 390px; }
+    input[type='submit'] { float: right; }
+    textarea { line-height: 15px; margin-top: 0; }
+
+    &#items-sandbox-input textarea { height: 100px; }
+  }
+
+  table td pre { margin: 0; }
+}

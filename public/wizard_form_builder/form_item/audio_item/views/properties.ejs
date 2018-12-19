@@ -1,0 +1,11 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+
+<%== check_box_tag('autoplay', '1', {'id': 'audio-autoplay'}, field.autoplay) %>
+<%== label_tag('Autoplay', {'for': 'audio-autoplay'}) %>
+
+<br/>
+
+<%== check_box_tag('repeat', '1', {'id': 'audio-repeat'}, field.repeat) %>
+<%== label_tag('Loop', {'for': 'audio-repeat'}) %>
+

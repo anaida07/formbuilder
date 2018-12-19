@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.FormItem.prototype._flagState", "type": "attribute", "parents": ["WizardFormBuilder.FormItem.prototype"], "comment": "<p>In a review job, stores information about what was flagged in this component</p>", "src": "../form_builder/form_item/form_item.js", "children": []})

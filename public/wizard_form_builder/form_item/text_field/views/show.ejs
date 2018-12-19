@@ -1,0 +1,13 @@
+<% if( this.options.jobtype == 'review' ) { %>
+  
+  <label class='top'><%= this.model.attr('label') %></label>
+  <div class='value'></div>
+
+<% } else { %>
+
+  <label class='top'><%= this.model.attr('label') %></label>
+  <input type='text' class='value'
+         name='<%= this.model.attr('name') %>'
+         placeholder='<%= this.model.attr('placeholder') %>'></input>
+
+<% } %>

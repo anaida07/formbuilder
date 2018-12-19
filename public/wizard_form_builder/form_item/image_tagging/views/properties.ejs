@@ -1,0 +1,10 @@
+<%== name_property(field, field.readonly) %>
+
+<%
+var choices = [{value: null, text: "Select an option..."}];
+field.form.items.match('type', 'ImageItem').each( function() {
+  choices.push({ value: this.name, text: this.name });
+});
+%>
+
+<%== select_property(field, 'image', "Image", "Select the image widget that will be tagged.", choices) %>

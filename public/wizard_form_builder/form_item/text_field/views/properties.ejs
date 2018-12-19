@@ -1,0 +1,64 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+<%== string_property(field, 'width') %>
+<%== string_property(field, 'placeholder', 'Hint') %>
+<div class='elem'>
+  <label class='top'>Required</label>
+  <span>
+    <input type='checkbox' name='required' id='text_field_required' <%= field.required === true ? 'checked' : '' %> />
+    <label for='text_field_required'>Yes</label>
+  </span>
+</div>
+
+<div class='elem'>
+  <label class='top'>Validation</label>
+  <span>
+    <input type='radio' name='validation_style' id='text_field_validation_style_standard' <%= field.validation_style === 'standard' ? 'checked' : '' %> value='standard'/>
+    <label for='text_field_validation_style_standard'>Standard</label>
+  </span>
+
+  <span>
+    <input type='radio' name='validation_style' id='text_field_validation_style_custom' <%= field.validation_style === 'custom' ? 'checked' : '' %> value='custom'/>
+    <label for='text_field_validation_style_custom'>Custom</label>
+  </span>
+</div>
+
+<div class='elem' id='custom_validation_wrap'>
+  <span>
+    <input type='text' name='custom_validation_regex' id='custom_validation_regex' placeholder='Enter Regex' value='<%= field.custom_validation_regex %>' />
+  </span>
+  <span>
+    <input type='text' name='custom_validation_message' id='custom_validation_message' placeholder='Enter Error Message' value='<%= field.custom_validation_message %>' />
+  </span>
+</div>
+
+<%
+var choices = [{value: null, text: 'Select an option...'}];
+$.each(field.form.validationTypes(), function(key, value){
+  choices.push({ value: value, text: key })
+})
+%>
+<div class='elem' id="validation_type_wrapper">
+  <%== select_property(field, 'validation_type', 'Validation', '', choices) %>
+</div>
+
+<div class='elem' id='range_wrap'>
+  <label class='top'>Range</label>
+  <div class='s_block'>
+    <label for='range_min'>Min</label>
+    <input type='text' name='range_min' id='range_min' value='<%= field.range_min %>' />
+  </div>
+  <div class='s_block'>
+    <label for='range_max'>Max</label>
+    <input type='text' name='range_max' id='range_max' value='<%= field.range_max %>' />
+  </div>
+  <div class='s_block'>
+    <label for='format'>Format</label>
+    <select id='format' name='format'>
+    </select>
+  </div>
+</div>
+
+<%== label_tag( "Instruction", {'for': 'tooltip', 'class': 'top'} ) %>
+<textarea name='tooltip' id='markdown'><%= field.attr('tooltip') %></textarea>
+<span class='format_help'>Formatting Help <i class='fa fa-info-circle'></i></span>

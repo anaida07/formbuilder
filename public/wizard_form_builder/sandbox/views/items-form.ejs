@@ -1,0 +1,20 @@
+<h2>Live Test</h2>
+
+<p>
+  For each data type field, provide a sample input. We've given you an idea of what should be in each field
+  to get you started.
+</p>
+
+<form id='items-sandbox-input' class='sandbox-input'>
+  <% this.options.form.items.match('accepts_data', true).each( function() { %>
+    <label class="top" for="<%= this.attr('name') %>"><%= this.attr('name') %></label>
+    
+    <% var tagname = this.type == 'DynamicTextItem' ? 'textarea' : 'input' %>
+      
+    <<%= tagname %> type="text" name="<%= this.attr('name') %>" placeholder="<%= this.valueHelper() %>"></<%= tagname %> ><br>
+  <% }) %>
+  
+  <input type='submit' class='action-button' name='Submit'></input>
+</form>
+
+<a href='javascript://' class='back'>&laquo; Back</a>

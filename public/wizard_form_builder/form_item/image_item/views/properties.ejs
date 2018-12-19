@@ -1,0 +1,22 @@
+<%== string_property(field, 'label') %>
+<%== name_property(field, field.readonly) %>
+<div class='elem'>
+  <label class='top'>Type</label>
+  <span>
+    <input type='radio' value='false' name='multiple' id='multiple_false' <%= field.attr('multiple') === 'false' ? 'checked' : '' %> />
+    <label for='multiple_false'>Single</label>
+  </span>
+  <span>
+    <input type='radio' class='final' value='true' name='multiple' id='multiple_true' <%= field.attr('multiple') === 'true' ? 'checked' : '' %> />
+    <label for='multiple_true'>Gallery</label>
+  </span>
+</div>
+<%== string_property(field, 'width') %>
+<%== string_property(field, 'height') %>
+<div class='elem'>
+  <label class='top'>Show Image Tools</label>
+  <span>
+    <input type='checkbox' name='img_tools' id='text_field_img_tools' <%= field.img_tools === true ? 'checked' : '' %> />
+    <label for='text_field_img_tools'>Yes</label>
+  </span>
+</div>

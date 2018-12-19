@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Models.DataItem.prototype.valueHelper", "params": {}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["WizardFormBuilder.Models.DataItem.prototype"], "comment": "<p>Helps the user to know what kind of data to put in the live test field</p>", "src": "../form_builder/models/data_item.js", "children": []})

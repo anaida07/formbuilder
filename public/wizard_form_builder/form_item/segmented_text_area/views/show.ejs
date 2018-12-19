@@ -1,0 +1,22 @@
+<% if( this.options.jobtype == 'review' ) { %>
+
+  <label class='top'>
+    <%= this.model.attr('label') %>
+    <span class='click-instructions extra-instructions'>(Click on each wrong word)</span>
+  </label>
+  
+  <pre class='value'></pre>
+  
+  <input class='missing_text' type='checkbox' id='<%= this.model.identity() %>_missing_text'></input>
+  <label class='missing_text extra-instructions' for='<%= this.model.identity() %>_missing_text'>This field is blank and there should be text in it.</label>
+
+<% } else { %>
+
+  <label class='top'><%= this.model.attr('label') %></label>
+
+  <pre class='value'>
+  </pre>
+          
+  <label class='top highlight-instructions extra-instructions' style='display: none'>*  Please verify and/or edit this text. Words highlighted in red have been marked incorrect by other workers. Pay special attention to these words and change them if necessary.</label>
+
+<% } %>

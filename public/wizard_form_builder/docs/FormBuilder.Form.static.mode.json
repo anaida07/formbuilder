@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Form.static.mode", "type": "attribute", "parents": ["WizardFormBuilder.Form.static"], "comment": "<p>'content' or 'review' </p>", "src": "../form_builder/form/form.js", "children": []})

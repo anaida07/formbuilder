@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Form.prototype.saveForm", "params": {}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["WizardFormBuilder.Form.prototype"], "comment": "<p>Save every item model in the form to the server</p>", "src": "../form_builder/form/form.js", "children": []})

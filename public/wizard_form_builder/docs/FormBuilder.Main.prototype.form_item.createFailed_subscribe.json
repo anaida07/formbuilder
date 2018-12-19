@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Main.prototype.form_item&#46;createFailed subscribe", "params": {}, "ret": {"type": "undefined", "description": ""}, "type": "function", "parents": ["WizardFormBuilder.Main.prototype"], "comment": "<p>Create/destroyed fail should probably be a notification, \nnot a save button change </p>", "src": "../form_builder/main/main.js", "children": []})

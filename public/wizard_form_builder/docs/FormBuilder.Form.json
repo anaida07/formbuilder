@@ -1,0 +1,1 @@
+C({"name": "WizardFormBuilder.Form", "type": "class", "comment": "<p>Display and edit forms.</p>", "parents": ["index"], "inherits": "jQuery.Controller", "src": "../form_builder/form/form.js", "children": ["WizardFormBuilder.Form.static", "WizardFormBuilder.Form.prototype"]})

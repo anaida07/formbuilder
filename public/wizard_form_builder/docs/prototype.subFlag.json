@@ -1,0 +1,1 @@
+C({"name": "prototype.subFlag", "type": "attribute", "parents": ["prototype"], "comment": "<p>Does this field have subscore flagging?</p>", "src": "../form_builder/models/form_item.js", "children": []})
